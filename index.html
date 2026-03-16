@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>House Price Predictor</title>
+<title>AI House Price Predictor</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(135deg,#4facfe,#00f2fe);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+width:350px;
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+background:#4facfe;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#0077ff;
+}
+
+.result{
+margin-top:20px;
+font-size:18px;
+color:green;
+font-weight:bold;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h2>House Price Prediction</h2>
+<div class="container">
+
+<h2>🏠 AI House Price Predictor</h2>
 
 <form method="post">
 
-Area (sqft):
-<input type="number" name="area"><br><br>
+<input type="number" name="area" placeholder="Area (sqft)" required>
 
-Bedrooms:
-<input type="number" name="bedrooms"><br><br>
+<input type="number" name="bedrooms" placeholder="Bedrooms" required>
 
-Age:
-<input type="number" name="age"><br><br>
+<input type="number" name="age" placeholder="House Age" required>
 
-<button type="submit">Predict</button>
+<button type="submit">Predict Price</button>
 
 </form>
 
 {% if result %}
-<h3>Predicted Price: {{result}} lakhs</h3>
+<div class="result">
+Predicted Price: {{result}} lakhs
+</div>
 {% endif %}
+
+</div>
 
 </body>
 </html>
